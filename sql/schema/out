@@ -1,0 +1,640 @@
+[?25l[?2004h╭───────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/admin/reset │
+╰┬──────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 200
+╭─────────────────────────────────────────╮
+│ ⣽  POST http://localhost:8080/api/users │
+╰┬────────────────────────────────────────╯
+[7A
+
+
+
+
+│ ?  POST http://localhost:8080/api/users │
+
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .email to be equal to walt@breakingbad.com
+╭─────────────────────────────────────────╮
+│ ⣽  POST http://localhost:8080/api/login │
+╰┬────────────────────────────────────────╯
+[12A
+
+
+
+
+
+
+
+
+
+│ ?  POST http://localhost:8080/api/login │
+
+ ├─  ?  Expecting status code: 200
+╭──────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .body to be equal to I'm the one who knocks!
+╭──────────────────────────────────────────╮
+│ ⣽  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ⣽  Expecting status code: 201
+ ├─  ⣽  Expecting JSON at .body to be equal to Gale!
+[23A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+│ ?  POST http://localhost:8080/api/chirps │
+
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .body to be equal to Gale!
+╭──────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .body to be equal to Cmon Pinkman
+╭──────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .body to be equal to Darn that fly, I just wanna cook
+╭───────────────────────────────────────────────────╮
+│ ?  GET http://localhost:8080/api/chirps?sort=desc │
+╰┬──────────────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 200
+ ├─  ?  Expecting JSON at .[0].body to be equal to Darn that fly, I just wanna cook
+ ├─  ?  Expecting JSON at .[1].body to be equal to Cmon Pinkman
+ ├─  ?  Expecting JSON at .[2].body to be equal to Gale!
+ ├─  ?  Expecting JSON at .[3].body to be equal to I'm the one who knocks!
+╭──────────────────────────────────────────────────╮
+│ ?  GET http://localhost:8080/api/chirps?sort=asc │
+╰┬─────────────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 200
+ ├─  ?  Expecting JSON at .[0].body to be equal to I'm the one who knocks!
+ ├─  ?  Expecting JSON at .[1].body to be equal to Gale!
+ ├─  ?  Expecting JSON at .[2].body to be equal to Cmon Pinkman
+ ├─  ?  Expecting JSON at .[3].body to be equal to Darn that fly, I just wanna cook
+[49A [J[2K[?2004l[?25h[?1002l[?1003l[?1006l╭───────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/admin/reset │
+╰┬──────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 200
+  Response Status Code: 200
+  Response Body: 
+
+
+╭─────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/users │
+╰┬────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .email to be equal to walt@breakingbad.com
+  Response Status Code: 201
+  Response Body: 
+{
+  "created_at": "2026-05-11T21:57:02.71575Z",
+  "email": "walt@breakingbad.com",
+  "id": "19d17f64-c281-487f-bc41-814fba230f81",
+  "is_chirpy_red": false,
+  "refresh_token": "",
+  "token": "",
+  "updated_at": "2026-05-11T21:57:02.71575Z"
+}
+
+╭─────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/login │
+╰┬────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 200
+  Response Status Code: 200
+  Response Body: 
+{
+  "created_at": "2026-05-11T21:57:02.71575Z",
+  "email": "walt@breakingbad.com",
+  "id": "19d17f64-c281-487f-bc41-814fba230f81",
+  "is_chirpy_red": false,
+  "refresh_token": "68856c8c59c5d594b9b34d7e4449684647ccbd6260c59f96022c7c884a74d692",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiMTlkMTdmNjQtYzI4MS00ODdmLWJjNDEtODE0ZmJhMjMwZjgxIiwiZXhwIjoxNzc4NTIwNDIyLCJpYXQiOjE3Nzg1MTY4MjJ9.tO1PoSYEhDzH_F5pVs3-WWE3vvOqYmcCfskfpenzMi0",
+  "updated_at": "2026-05-11T21:57:02.71575Z"
+}
+  Variables Saved: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiMTlkMTdmNjQtYzI4MS00ODdmLWJjNDEtODE0ZmJhMjMwZjgxIiwiZXhwIjoxNzc4NTIwNDIyLCJpYXQiOjE3Nzg1MTY4MjJ9.tO1PoSYEhDzH_F5pVs3-WWE3vvOqYmcCfskfpenzMi0 (JSON Body .token)
+
+╭──────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .body to be equal to I'm the one who knocks!
+  Response Status Code: 201
+  Response Body: 
+{
+  "body": "I'm the one who knocks!",
+  "created_at": "2026-05-11T21:57:02.731688Z",
+  "id": "e32fe620-92fa-4fd9-943e-c737b456eaf2",
+  "updated_at": "2026-05-11T21:57:02.731688Z",
+  "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+}
+  Variables Available: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiMTlkMTdmNjQtYzI4MS00ODdmLWJjNDEtODE0ZmJhMjMwZjgxIiwiZXhwIjoxNzc4NTIwNDIyLCJpYXQiOjE3Nzg1MTY4MjJ9.tO1PoSYEhDzH_F5pVs3-WWE3vvOqYmcCfskfpenzMi0 (Request Header "Authorization")
+
+╭──────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .body to be equal to Gale!
+  Response Status Code: 201
+  Response Body: 
+{
+  "body": "Gale!",
+  "created_at": "2026-05-11T21:57:02.733897Z",
+  "id": "c4bbc7ca-85a7-4cd7-8042-6d5142fdd816",
+  "updated_at": "2026-05-11T21:57:02.733897Z",
+  "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+}
+  Variables Available: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiMTlkMTdmNjQtYzI4MS00ODdmLWJjNDEtODE0ZmJhMjMwZjgxIiwiZXhwIjoxNzc4NTIwNDIyLCJpYXQiOjE3Nzg1MTY4MjJ9.tO1PoSYEhDzH_F5pVs3-WWE3vvOqYmcCfskfpenzMi0 (Request Header "Authorization")
+
+╭──────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .body to be equal to Cmon Pinkman
+  Response Status Code: 201
+  Response Body: 
+{
+  "body": "Cmon Pinkman",
+  "created_at": "2026-05-11T21:57:02.736015Z",
+  "id": "2a994108-9253-46e6-937a-3058668ac902",
+  "updated_at": "2026-05-11T21:57:02.736015Z",
+  "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+}
+  Variables Available: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiMTlkMTdmNjQtYzI4MS00ODdmLWJjNDEtODE0ZmJhMjMwZjgxIiwiZXhwIjoxNzc4NTIwNDIyLCJpYXQiOjE3Nzg1MTY4MjJ9.tO1PoSYEhDzH_F5pVs3-WWE3vvOqYmcCfskfpenzMi0 (Request Header "Authorization")
+
+╭──────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .body to be equal to Darn that fly, I just wanna cook
+  Response Status Code: 201
+  Response Body: 
+{
+  "body": "Darn that fly, I just wanna cook",
+  "created_at": "2026-05-11T21:57:02.737791Z",
+  "id": "46849fd5-f7b9-470b-a7c1-d6e19f05c7ff",
+  "updated_at": "2026-05-11T21:57:02.737791Z",
+  "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+}
+  Variables Available: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiMTlkMTdmNjQtYzI4MS00ODdmLWJjNDEtODE0ZmJhMjMwZjgxIiwiZXhwIjoxNzc4NTIwNDIyLCJpYXQiOjE3Nzg1MTY4MjJ9.tO1PoSYEhDzH_F5pVs3-WWE3vvOqYmcCfskfpenzMi0 (Request Header "Authorization")
+
+╭───────────────────────────────────────────────────╮
+│ X  GET http://localhost:8080/api/chirps?sort=desc │
+╰┬──────────────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 200
+ ├─  X  Expecting JSON at .[0].body to be equal to Darn that fly, I just wanna cook
+ ├─  ?  Expecting JSON at .[1].body to be equal to Cmon Pinkman
+ ├─  ?  Expecting JSON at .[2].body to be equal to Gale!
+ ├─  ?  Expecting JSON at .[3].body to be equal to I'm the one who knocks!
+  Response Status Code: 200
+  Response Body: 
+[
+  {
+    "body": "I'm the one who knocks!",
+    "created_at": "2026-05-11T21:57:02.731688Z",
+    "id": "e32fe620-92fa-4fd9-943e-c737b456eaf2",
+    "updated_at": "2026-05-11T21:57:02.731688Z",
+    "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+  },
+  {
+    "body": "Gale!",
+    "created_at": "2026-05-11T21:57:02.733897Z",
+    "id": "c4bbc7ca-85a7-4cd7-8042-6d5142fdd816",
+    "updated_at": "2026-05-11T21:57:02.733897Z",
+    "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+  },
+  {
+    "body": "Cmon Pinkman",
+    "created_at": "2026-05-11T21:57:02.736015Z",
+    "id": "2a994108-9253-46e6-937a-3058668ac902",
+    "updated_at": "2026-05-11T21:57:02.736015Z",
+    "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+  },
+  {
+    "body": "Darn that fly, I just wanna cook",
+    "created_at": "2026-05-11T21:57:02.737791Z",
+    "id": "46849fd5-f7b9-470b-a7c1-d6e19f05c7ff",
+    "updated_at": "2026-05-11T21:57:02.737791Z",
+    "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+  }
+]
+
+╭──────────────────────────────────────────────────╮
+│ ?  GET http://localhost:8080/api/chirps?sort=asc │
+╰┬─────────────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 200
+ ├─  ?  Expecting JSON at .[0].body to be equal to I'm the one who knocks!
+ ├─  ?  Expecting JSON at .[1].body to be equal to Gale!
+ ├─  ?  Expecting JSON at .[2].body to be equal to Cmon Pinkman
+ ├─  ?  Expecting JSON at .[3].body to be equal to Darn that fly, I just wanna cook
+  Response Status Code: 200
+  Response Body: 
+[
+  {
+    "body": "I'm the one who knocks!",
+    "created_at": "2026-05-11T21:57:02.731688Z",
+    "id": "e32fe620-92fa-4fd9-943e-c737b456eaf2",
+    "updated_at": "2026-05-11T21:57:02.731688Z",
+    "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+  },
+  {
+    "body": "Gale!",
+    "created_at": "2026-05-11T21:57:02.733897Z",
+    "id": "c4bbc7ca-85a7-4cd7-8042-6d5142fdd816",
+    "updated_at": "2026-05-11T21:57:02.733897Z",
+    "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+  },
+  {
+    "body": "Cmon Pinkman",
+    "created_at": "2026-05-11T21:57:02.736015Z",
+    "id": "2a994108-9253-46e6-937a-3058668ac902",
+    "updated_at": "2026-05-11T21:57:02.736015Z",
+    "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+  },
+  {
+    "body": "Darn that fly, I just wanna cook",
+    "created_at": "2026-05-11T21:57:02.737791Z",
+    "id": "46849fd5-f7b9-470b-a7c1-d6e19f05c7ff",
+    "updated_at": "2026-05-11T21:57:02.737791Z",
+    "user_id": "19d17f64-c281-487f-bc41-814fba230f81"
+  }
+]
+
+
+
+Tests failed! ❌                                                              
+                                                              
+Failed Command: GET http://localhost:8080/api/chirps?sort=desc              
+              
+Failed Step: 8                             
+Error: string value not equal
+
+[?25l[?2004h╭───────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/admin/reset │
+╰┬──────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 200
+╭─────────────────────────────────────────╮
+│ ⣽  POST http://localhost:8080/api/users │
+╰┬────────────────────────────────────────╯
+[7A
+
+
+
+
+│ ?  POST http://localhost:8080/api/users │
+
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .email to be equal to walt@breakingbad.com
+╭─────────────────────────────────────────╮
+│ ⣽  POST http://localhost:8080/api/login │
+╰┬────────────────────────────────────────╯
+[12A
+
+
+
+
+
+
+
+
+
+│ ?  POST http://localhost:8080/api/login │
+
+ ├─  ?  Expecting status code: 200
+╭──────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .body to be equal to I'm the one who knocks!
+╭──────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .body to be equal to Gale!
+╭──────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .body to be equal to Cmon Pinkman
+[28A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+╭──────────────────────────────────────────╮
+│ ?  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 201
+ ├─  ?  Expecting JSON at .body to be equal to Darn that fly, I just wanna cook
+╭───────────────────────────────────────────────────╮
+│ ?  GET http://localhost:8080/api/chirps?sort=desc │
+╰┬──────────────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 200
+ ├─  ?  Expecting JSON at .[0].body to be equal to Darn that fly, I just wanna cook
+ ├─  ?  Expecting JSON at .[1].body to be equal to Cmon Pinkman
+ ├─  ?  Expecting JSON at .[2].body to be equal to Gale!
+ ├─  ?  Expecting JSON at .[3].body to be equal to I'm the one who knocks!
+╭──────────────────────────────────────────────────╮
+│ ?  GET http://localhost:8080/api/chirps?sort=asc │
+╰┬─────────────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 200
+ ├─  ?  Expecting JSON at .[0].body to be equal to I'm the one who knocks!
+ ├─  ?  Expecting JSON at .[1].body to be equal to Gale!
+ ├─  ?  Expecting JSON at .[2].body to be equal to Cmon Pinkman
+ ├─  ?  Expecting JSON at .[3].body to be equal to Darn that fly, I just wanna cook
+[49A
+│ ✓  POST http://localhost:8080/admin/reset │
+
+ ├─  ✓  Expecting status code: 200
+
+│ ✓  POST http://localhost:8080/api/users │
+
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .email to be equal to walt@breakingbad.com
+
+│ ✓  POST http://localhost:8080/api/login │
+
+ ├─  ✓  Expecting status code: 200
+
+│ ✓  POST http://localhost:8080/api/chirps │
+
+ ├─  ✓  Expecting status code: 201
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[49A [J[2K[?2004l[?25h[?1002l[?1003l[?1006l╭───────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/admin/reset │
+╰┬──────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 200
+  Response Status Code: 200
+  Response Body: 
+
+
+╭─────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/users │
+╰┬────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .email to be equal to walt@breakingbad.com
+  Response Status Code: 201
+  Response Body: 
+{
+  "created_at": "2026-05-11T22:01:15.751768Z",
+  "email": "walt@breakingbad.com",
+  "id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546",
+  "is_chirpy_red": false,
+  "refresh_token": "",
+  "token": "",
+  "updated_at": "2026-05-11T22:01:15.751768Z"
+}
+
+╭─────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/login │
+╰┬────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 200
+  Response Status Code: 200
+  Response Body: 
+{
+  "created_at": "2026-05-11T22:01:15.751768Z",
+  "email": "walt@breakingbad.com",
+  "id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546",
+  "is_chirpy_red": false,
+  "refresh_token": "48721b3b981b7b3d5bebc56cb8593e1602c27e2a887447a8865c0661070be560",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiNzM4YzRhYzgtZTNkMi00ZWI0LWI1MjItYzY3MDJlOWNiNTQ2IiwiZXhwIjoxNzc4NTIwNjc1LCJpYXQiOjE3Nzg1MTcwNzV9.MMLmR0KgC0qikHFbtYcRtWDe8LqhwydQDIZpaX56fT4",
+  "updated_at": "2026-05-11T22:01:15.751768Z"
+}
+  Variables Saved: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiNzM4YzRhYzgtZTNkMi00ZWI0LWI1MjItYzY3MDJlOWNiNTQ2IiwiZXhwIjoxNzc4NTIwNjc1LCJpYXQiOjE3Nzg1MTcwNzV9.MMLmR0KgC0qikHFbtYcRtWDe8LqhwydQDIZpaX56fT4 (JSON Body .token)
+
+╭──────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .body to be equal to I'm the one who knocks!
+  Response Status Code: 201
+  Response Body: 
+{
+  "body": "I'm the one who knocks!",
+  "created_at": "2026-05-11T22:01:15.76986Z",
+  "id": "49b37a14-a7e1-40f7-bedb-8235c121495e",
+  "updated_at": "2026-05-11T22:01:15.76986Z",
+  "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+}
+  Variables Available: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiNzM4YzRhYzgtZTNkMi00ZWI0LWI1MjItYzY3MDJlOWNiNTQ2IiwiZXhwIjoxNzc4NTIwNjc1LCJpYXQiOjE3Nzg1MTcwNzV9.MMLmR0KgC0qikHFbtYcRtWDe8LqhwydQDIZpaX56fT4 (Request Header "Authorization")
+
+╭──────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .body to be equal to Gale!
+  Response Status Code: 201
+  Response Body: 
+{
+  "body": "Gale!",
+  "created_at": "2026-05-11T22:01:15.77216Z",
+  "id": "da5b63f9-a9f3-4e67-ad07-6ce4e60e54c2",
+  "updated_at": "2026-05-11T22:01:15.77216Z",
+  "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+}
+  Variables Available: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiNzM4YzRhYzgtZTNkMi00ZWI0LWI1MjItYzY3MDJlOWNiNTQ2IiwiZXhwIjoxNzc4NTIwNjc1LCJpYXQiOjE3Nzg1MTcwNzV9.MMLmR0KgC0qikHFbtYcRtWDe8LqhwydQDIZpaX56fT4 (Request Header "Authorization")
+
+╭──────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .body to be equal to Cmon Pinkman
+  Response Status Code: 201
+  Response Body: 
+{
+  "body": "Cmon Pinkman",
+  "created_at": "2026-05-11T22:01:15.774128Z",
+  "id": "d7ef2018-710b-4d29-a72e-e1a0b526e461",
+  "updated_at": "2026-05-11T22:01:15.774128Z",
+  "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+}
+  Variables Available: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiNzM4YzRhYzgtZTNkMi00ZWI0LWI1MjItYzY3MDJlOWNiNTQ2IiwiZXhwIjoxNzc4NTIwNjc1LCJpYXQiOjE3Nzg1MTcwNzV9.MMLmR0KgC0qikHFbtYcRtWDe8LqhwydQDIZpaX56fT4 (Request Header "Authorization")
+
+╭──────────────────────────────────────────╮
+│ ✓  POST http://localhost:8080/api/chirps │
+╰┬─────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 201
+ ├─  ✓  Expecting JSON at .body to be equal to Darn that fly, I just wanna cook
+  Response Status Code: 201
+  Response Body: 
+{
+  "body": "Darn that fly, I just wanna cook",
+  "created_at": "2026-05-11T22:01:15.775652Z",
+  "id": "df5bff37-ec5e-4440-9fea-09454744f89c",
+  "updated_at": "2026-05-11T22:01:15.775652Z",
+  "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+}
+  Variables Available: 
+   - waltAccessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjaGlycHktYWNjZXNzIiwic3ViIjoiNzM4YzRhYzgtZTNkMi00ZWI0LWI1MjItYzY3MDJlOWNiNTQ2IiwiZXhwIjoxNzc4NTIwNjc1LCJpYXQiOjE3Nzg1MTcwNzV9.MMLmR0KgC0qikHFbtYcRtWDe8LqhwydQDIZpaX56fT4 (Request Header "Authorization")
+
+╭───────────────────────────────────────────────────╮
+│ X  GET http://localhost:8080/api/chirps?sort=desc │
+╰┬──────────────────────────────────────────────────╯
+ ├─  ✓  Expecting status code: 200
+ ├─  X  Expecting JSON at .[0].body to be equal to Darn that fly, I just wanna cook
+ ├─  ?  Expecting JSON at .[1].body to be equal to Cmon Pinkman
+ ├─  ?  Expecting JSON at .[2].body to be equal to Gale!
+ ├─  ?  Expecting JSON at .[3].body to be equal to I'm the one who knocks!
+  Response Status Code: 200
+  Response Body: 
+[
+  {
+    "body": "I'm the one who knocks!",
+    "created_at": "2026-05-11T22:01:15.76986Z",
+    "id": "49b37a14-a7e1-40f7-bedb-8235c121495e",
+    "updated_at": "2026-05-11T22:01:15.76986Z",
+    "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+  },
+  {
+    "body": "Gale!",
+    "created_at": "2026-05-11T22:01:15.77216Z",
+    "id": "da5b63f9-a9f3-4e67-ad07-6ce4e60e54c2",
+    "updated_at": "2026-05-11T22:01:15.77216Z",
+    "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+  },
+  {
+    "body": "Cmon Pinkman",
+    "created_at": "2026-05-11T22:01:15.774128Z",
+    "id": "d7ef2018-710b-4d29-a72e-e1a0b526e461",
+    "updated_at": "2026-05-11T22:01:15.774128Z",
+    "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+  },
+  {
+    "body": "Darn that fly, I just wanna cook",
+    "created_at": "2026-05-11T22:01:15.775652Z",
+    "id": "df5bff37-ec5e-4440-9fea-09454744f89c",
+    "updated_at": "2026-05-11T22:01:15.775652Z",
+    "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+  }
+]
+
+╭──────────────────────────────────────────────────╮
+│ ?  GET http://localhost:8080/api/chirps?sort=asc │
+╰┬─────────────────────────────────────────────────╯
+ ├─  ?  Expecting status code: 200
+ ├─  ?  Expecting JSON at .[0].body to be equal to I'm the one who knocks!
+ ├─  ?  Expecting JSON at .[1].body to be equal to Gale!
+ ├─  ?  Expecting JSON at .[2].body to be equal to Cmon Pinkman
+ ├─  ?  Expecting JSON at .[3].body to be equal to Darn that fly, I just wanna cook
+  Response Status Code: 200
+  Response Body: 
+[
+  {
+    "body": "I'm the one who knocks!",
+    "created_at": "2026-05-11T22:01:15.76986Z",
+    "id": "49b37a14-a7e1-40f7-bedb-8235c121495e",
+    "updated_at": "2026-05-11T22:01:15.76986Z",
+    "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+  },
+  {
+    "body": "Gale!",
+    "created_at": "2026-05-11T22:01:15.77216Z",
+    "id": "da5b63f9-a9f3-4e67-ad07-6ce4e60e54c2",
+    "updated_at": "2026-05-11T22:01:15.77216Z",
+    "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+  },
+  {
+    "body": "Cmon Pinkman",
+    "created_at": "2026-05-11T22:01:15.774128Z",
+    "id": "d7ef2018-710b-4d29-a72e-e1a0b526e461",
+    "updated_at": "2026-05-11T22:01:15.774128Z",
+    "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+  },
+  {
+    "body": "Darn that fly, I just wanna cook",
+    "created_at": "2026-05-11T22:01:15.775652Z",
+    "id": "df5bff37-ec5e-4440-9fea-09454744f89c",
+    "updated_at": "2026-05-11T22:01:15.775652Z",
+    "user_id": "738c4ac8-e3d2-4eb4-b522-c6702e9cb546"
+  }
+]
+
+
+
+Tests failed! ❌                                                              
+                                                              
+Failed Command: GET http://localhost:8080/api/chirps?sort=desc              
+              
+Failed Step: 8                             
+Error: string value not equal
+
